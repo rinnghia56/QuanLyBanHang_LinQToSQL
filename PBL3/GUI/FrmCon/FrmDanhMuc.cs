@@ -79,7 +79,6 @@ namespace PBL3.GUI.FrmCon
                 MessageBox.Show("Chọn danh mục cần xoá");
                 return;
             }
-            
             List<DanhMuc> dsDanhMucXoa = new List<DanhMuc>();
             foreach (ListViewItem lvi in lvDanhMuc.SelectedItems)
             {
@@ -109,7 +108,5 @@ namespace PBL3.GUI.FrmCon
             int sttDanhMuc = Function.Instance.layThuTuCuaMaDM(lvDanhMuc.Items[lvDanhMuc.Items.Count - 1].SubItems[0].Text.Trim());
             txtMa.Text = Function.Instance.setMaDM(sttDanhMuc+1);
         }
-
-
     }
 }

@@ -268,7 +268,90 @@ namespace PBL3.BusinessLogic
 
         }
 
+        //========================Khách hàng===================
+        public List<KhachHang> getAllKhachHang()
+        {
+            return db.KhachHangs.ToList();
+        }
+        public bool checkMaKH(string maInput)
+        {
+            return db.KhachHangs.Any(sp => sp.ID_KH == maInput);
+        }
+        public string setMaKH(int valueInput)
+        {
+            if (valueInput > 0 && valueInput <= 9)
+            {
+                return "KH000" + valueInput;
+            }
+            if (valueInput > 9 && valueInput <= 99) return "KH00" + valueInput;
+            if (valueInput > 99 && valueInput <= 999) return "KH0" + valueInput;
+            return "KH" + valueInput;
+        }
+        public bool insertKhachHang(string maInput, string nameInput, string sdt, int diem)
+        {
+            try
+            {
+                db.KhachHangs.Add(new KhachHang()
+                {
+                    ID_KH=maInput,
+                    TenKH=nameInput,
+                    SDT=sdt,
+                    DiemTichLuy = diem
+                });
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public KhachHang GetKhach(string maInPut)
+        {
+            KhachHang kh = db.KhachHangs.FirstOrDefault(x => x.ID_KH == maInPut);
+            return kh;
+        }
+
+        public bool updateKH(string maInput, string nameInput, string sdt)
+        {
+            KhachHang kh = GetKhach(maInput);
+            if (kh != null)
+            {
+                try
+                {
+                    kh.TenKH = nameInput;
+                    kh.SDT = sdt;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+        public bool xoaKH(List<KhachHang> dsInput)
+        {
+            try
+            {
+                db.KhachHangs.RemoveRange(dsInput);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool isKhUsed(List<KhachHang> dsInput) //Check khach hàng đã mua từng mua hàng chưa
+        {
+            //Nếu trong danh sách khách hàng có 1 khách hàng với điểm lớn hơn 0  thì trả về true
+            return (dsInput.Any(kh => kh.DiemTichLuy > 0));  
+        }
+
     }
 }
-//================================Khách hàng==============
+
 

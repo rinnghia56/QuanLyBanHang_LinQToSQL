@@ -128,7 +128,7 @@ namespace PBL3.GUI.FrmCon
                 return;
             }
 
-            if (!Function.Instance.checkMaSP(txtMa.Text))  //Nếu mã sp chưa tồn tại
+            if (!Function.Instance.checkMaSP(txtMa.Text))  //Nếu mã sp chưa tồn tại => thêm mới
             {
                 if (Function.Instance.insertSanPham(txtMa.Text, txtTen.Text, maDM, soLuong, giaBan))
                 {
