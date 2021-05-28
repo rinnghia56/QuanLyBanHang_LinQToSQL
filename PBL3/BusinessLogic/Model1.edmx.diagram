@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8bda76e9482a4229be4269ea7f3067ba" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAnPBL3Model.CT_HoaDon" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.CT_PhieuNhap" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.DanhMuc" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.HoaDon" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.KhachHang" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.PhieuNhap" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.SanPham" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnPBL3Model.TaiKhoan" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_CT_HoaDon_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_CT_HoaDon_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_CT_PhieuNhap_PhieuNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_CT_PhieuNhap_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_SanPham_DanhMuc" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_HoaDon_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_HoaDon_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnPBL3Model.FK_PhieuNhap_TaiKhoan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
