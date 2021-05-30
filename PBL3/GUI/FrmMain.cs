@@ -89,7 +89,7 @@ namespace PBL3.GUI
             clickButton(pnChay, pnChay_Danhmuc, pnChay_Kho, pnChay_SP);
             pnChay.Top = btnTaiKhoan.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
-            //motrangcon(new FrmDonHang());
+            motrangcon(new FrmTaiKhoan());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)

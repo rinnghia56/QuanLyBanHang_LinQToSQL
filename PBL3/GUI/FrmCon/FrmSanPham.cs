@@ -239,6 +239,10 @@ namespace PBL3.GUI.FrmCon
         {
             hienThiSanPhamLenListView(SearchSanPham(getMaDMfromListBox(), txtSearch.Text));
         }
-        
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,8 @@ namespace PBL3.BusinessLogic
         {
             return db.DanhMucs.ToList();
         }
+
+        //Lấy tài khoản từ mã tài khoản
         public DanhMuc GetDanhMuc(string maDM_InPut)
         {
             DanhMuc dm = db.DanhMucs.FirstOrDefault(x => x.MaDM == maDM_InPut);
@@ -350,6 +352,89 @@ namespace PBL3.BusinessLogic
             //Nếu trong danh sách khách hàng có 1 khách hàng với điểm lớn hơn 0  thì trả về true
             return (dsInput.Any(kh => kh.DiemTichLuy > 0));  
         }
+        //=======================Tai khoan=============================
+        public List<TaiKhoan> getAllTaiKhoan()
+        {
+            return db.TaiKhoans.ToList();
+        }
+        public int layThuTuCuaMaTK(string maInPut)
+        {
+            string chuoiCon = maInPut.Substring(2);
+            int thuTuMa = 0;
+            do
+            {
+                if (!Int32.TryParse(chuoiCon, out thuTuMa))
+                {
+                    chuoiCon = maInPut.Substring(1);
+                }
+
+            } while (!Int32.TryParse(chuoiCon, out thuTuMa));
+            return thuTuMa;
+        }
+        public string setMaTK(int valueInput)
+        {
+            if (valueInput > 0 && valueInput <= 9)
+            {
+                return "NV00" + valueInput;
+            }
+            if (valueInput > 9 && valueInput <= 99) return "NV0" + valueInput;
+            return "NV" + valueInput;
+        }
+        public bool insertNewTaiKhoan(string maInput, string nameInput,string sdtInput, string username, string pass,bool typeInput)
+        {
+            try
+            {
+                db.TaiKhoans.Add(new TaiKhoan()
+                {
+                    ID_TK = maInput,
+                    HoTen =nameInput,
+                    SDT = sdtInput,
+                    Username = username,
+                    Password=pass,
+                    type=typeInput
+                });
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool checkMaTK(string maInput)
+        {
+            return db.TaiKhoans.Any(tk => tk.ID_TK == maInput);
+        }
+
+        private TaiKhoan getTaiKhoan(string maTK) 
+        {
+            TaiKhoan tk = db.TaiKhoans.FirstOrDefault(x => x.ID_TK == maTK);
+            return tk;
+        }
+
+        public bool updateTaiKhoan(string maInput, string tenTK, string sdt,string pass,bool type)
+        {
+            TaiKhoan tk = getTaiKhoan(maInput);
+            if (tk != null)
+            {
+                try
+                {
+                    tk.HoTen = tenTK;
+                    tk.SDT = sdt;
+                    tk.Password = pass;
+                    tk.type = type;
+
+                    db.SaveChanges();
+                    return true;
+                }
+                catch 
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
 
     }
 }
