@@ -435,7 +435,33 @@ namespace PBL3.BusinessLogic
             return false;
         }
 
+        //Kiểm tra tài khoản này đã được dùng để nhập haowcj bán hàng chưa
+        public bool isTaiKhoanUsed(string ma)
+        {
+            if (db.PhieuNhaps.Any(pn => pn.ID_TK == ma)) return true;//Nếu có ma TK trong danh sách phiếu nhập
 
+            if (db.HoaDons.Any(hd => hd.ID_TK == ma))
+                return true;//Nếu có ma TK trong danh sách hoá đơn
+            return false;
+        }
+        public bool deleteTaiKhoan(string maInput)
+        {
+            TaiKhoan tk = getTaiKhoan(maInput);
+            if (tk != null)
+            {
+                try
+                {
+                    db.TaiKhoans.Remove(tk);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
     }
 }
 

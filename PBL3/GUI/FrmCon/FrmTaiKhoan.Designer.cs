@@ -84,22 +84,22 @@ namespace PBL3.GUI.FrmCon
             // columnHeader2
             // 
             this.columnHeader2.Text = "Họ tên";
-            this.columnHeader2.Width = 153;
+            this.columnHeader2.Width = 191;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Số điện thoại";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 163;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Username";
-            this.columnHeader4.Width = 203;
+            this.columnHeader4.Width = 158;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Password";
-            this.columnHeader5.Width = 175;
+            this.columnHeader5.Width = 154;
             // 
             // columnHeader6
             // 
@@ -235,12 +235,13 @@ namespace PBL3.GUI.FrmCon
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(532, 563);
+            this.btnXoa.Location = new System.Drawing.Point(547, 563);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(107, 39);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 

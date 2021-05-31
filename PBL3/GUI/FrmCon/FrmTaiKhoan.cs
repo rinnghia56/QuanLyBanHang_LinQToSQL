@@ -35,6 +35,7 @@ namespace PBL3.GUI.FrmCon
                 lvi.SubItems.Add(tk.type + "");
                 lvTaiKhoan.Items.Add(lvi);
             });
+            lvTaiKhoan.Items[0].ForeColor = Color.Red;
         }
 
         private void lvTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,7 +116,40 @@ namespace PBL3.GUI.FrmCon
                     MessageBox.Show("Thất bại");
                 }
             }
-            
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lvTaiKhoan.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Chọn tài khoản cần xoá");
+                return;
+            }
+            if (lvTaiKhoan.SelectedItems.Count >1 )
+            {
+                MessageBox.Show("Chỉ chọn 1 tài khoản để xoá");
+                return;
+            }
+            string ma = lvTaiKhoan.SelectedItems[0].SubItems[0].Text.Trim();
+            if (ma == "ADMIN")
+            {
+                MessageBox.Show("Không thể xoá tài khoản admin của hệ thống");
+                return;
+            }
+            if (Function.Instance.isTaiKhoanUsed(ma))
+            {
+                MessageBox.Show("Ko thể xoá tài khoản này");
+                return;
+            }
+            if (Function.Instance.deleteTaiKhoan(ma))
+            {
+                MessageBox.Show("Xoá thành công");
+                hienThiTaiKhoanLenListView(Function.Instance.getAllTaiKhoan());
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
         }
     }
 }
