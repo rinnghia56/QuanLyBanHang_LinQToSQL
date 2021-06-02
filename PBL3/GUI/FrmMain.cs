@@ -78,10 +78,13 @@ namespace PBL3.GUI
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
+            
             clickButton(pnChay, pnChay_Danhmuc, pnChay_Kho, pnChay_SP);
             pnChay.Top = btnNhap.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
-           // motrangcon(new FrmTaiKhoan());
+            FrmNhapHang frm = new FrmNhapHang();
+            frm.Sender(IDTaiKhoan);
+           motrangcon(frm);
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)

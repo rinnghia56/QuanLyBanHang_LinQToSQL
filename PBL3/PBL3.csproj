@@ -172,6 +172,9 @@
     <EmbeddedResource Include="GUI\FrmCon\FrmKhach.resx">
       <DependentUpon>FrmKhach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmCon\FrmNhapHang.resx">
+      <DependentUpon>FrmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmCon\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
     </EmbeddedResource>

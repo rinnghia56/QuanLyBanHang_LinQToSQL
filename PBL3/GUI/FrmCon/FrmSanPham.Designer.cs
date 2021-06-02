@@ -115,7 +115,8 @@ namespace PBL3.GUI.FrmCon
             // lbDanhMuc
             // 
             this.lbDanhMuc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lbDanhMuc.FormattingEnabled = true;
             this.lbDanhMuc.ItemHeight = 20;
             this.lbDanhMuc.Location = new System.Drawing.Point(3, 45);
@@ -191,6 +192,7 @@ namespace PBL3.GUI.FrmCon
             this.cbbDanhMuc.Name = "cbbDanhMuc";
             this.cbbDanhMuc.Size = new System.Drawing.Size(191, 28);
             this.cbbDanhMuc.TabIndex = 18;
+            this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbbDanhMuc_SelectedIndexChanged);
             // 
             // txtDonGia
             // 

@@ -41,7 +41,6 @@ namespace PBL3.GUI.FrmCon
             if (lbDanhMuc.SelectedValue == null) return; //Chưa chọn danh mục trên listbox
             string maDm = lbDanhMuc.SelectedValue.ToString();
             hienThiSanPhamLenListView(SearchSanPham(getMaDMfromListBox(), txtSearch.Text));
-            //hienThiSanPhamLenListView(Function.Instance.GetListSanPhamsByDM(maDm));
         }
         private void hienThiSanPhamLenListView(List<SanPham>dsSanPhams)
         {
@@ -84,7 +83,6 @@ namespace PBL3.GUI.FrmCon
         private void button1_Click(object sender, EventArgs e)
         {
             hienThiSanPhamLenListView(Function.Instance.getAllSanPham());
-            lbDanhMuc.SelectedIndex = -1;
             resetControl();
         }
 
@@ -133,7 +131,8 @@ namespace PBL3.GUI.FrmCon
                 if (Function.Instance.insertSanPham(txtMa.Text, txtTen.Text, maDM, soLuong, giaBan))
                 {
                     MessageBox.Show("Thêm thành công");
-                    btnAll.PerformClick();
+                    hienThiSanPhamLenListView(Function.Instance.getAllSanPham());
+                    resetControl();
                 }
                 else
                 {
@@ -145,7 +144,8 @@ namespace PBL3.GUI.FrmCon
                 if (Function.Instance.updateSanPham(txtMa.Text, txtTen.Text, maDM, soLuong, giaBan))
                 {
                     MessageBox.Show("Update thành công");
-                    btnAll.PerformClick();
+                    hienThiSanPhamLenListView(Function.Instance.getAllSanPham());
+                    resetControl();
                 }
                 else MessageBox.Show("Thất bại");
             }
@@ -241,6 +241,11 @@ namespace PBL3.GUI.FrmCon
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

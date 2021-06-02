@@ -31,3 +31,4 @@ D:\PBL3\SourcodePBL3-main\PBL3\PBL3\obj\Debug\PBL3.GUI.FrmCon.FrmSanPham.resourc
 D:\PBL3\SourcodePBL3-main\PBL3\PBL3\obj\Debug\PBL3.GUI.FrmCon.FrmBanHang.resources
 D:\PBL3\SourcodePBL3-main\PBL3\PBL3\obj\Debug\PBL3.GUI.FrmCon.FrmKhach.resources
 D:\PBL3\SourcodePBL3-main\PBL3\PBL3\obj\Debug\PBL3.GUI.FrmCon.FrmTaiKhoan.resources
+D:\PBL3\SourcodePBL3-main\PBL3\PBL3\obj\Debug\PBL3.GUI.FrmCon.FrmNhapHang.resources

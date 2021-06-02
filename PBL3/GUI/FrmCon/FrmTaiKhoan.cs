@@ -43,16 +43,15 @@ namespace PBL3.GUI.FrmCon
             if (txtUsername.ReadOnly == false) txtUsername.ReadOnly = true;
             if (lvTaiKhoan.SelectedItems.Count == 0) return;
             ListViewItem lvi = lvTaiKhoan.SelectedItems[0];
-            txtMa.Text = lvi.SubItems[0].Text;
-            txtName.Text = lvi.SubItems[1].Text;
-            txtSDT.Text = lvi.SubItems[2].Text;
-            txtUsername.Text = lvi.SubItems[3].Text;
-            txtPass.Text = lvi.SubItems[4].Text;
+            txtMa.Text = lvi.SubItems[0].Text.Trim();
+            txtName.Text = lvi.SubItems[1].Text.Trim();
+            txtSDT.Text = lvi.SubItems[2].Text.Trim();
+            txtUsername.Text = lvi.SubItems[3].Text.Trim();
+            txtPass.Text = lvi.SubItems[4].Text.Trim();
             if (lvi.SubItems[5].Text == "True") radYes.Checked = true;
             else radNo.Checked = true;
             if (lvTaiKhoan.SelectedItems.Count > 1)
             {
-               
                 txtMa.Text = "";
                 txtName.Text = "";
                 txtSDT.Text = "";
