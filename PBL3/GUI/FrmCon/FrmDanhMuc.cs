@@ -30,7 +30,6 @@ namespace PBL3.GUI.FrmCon
         private void FrmDanhMuc_Load(object sender, EventArgs e)
         {
             hienThiToanBoDanhMuc();
-           
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {

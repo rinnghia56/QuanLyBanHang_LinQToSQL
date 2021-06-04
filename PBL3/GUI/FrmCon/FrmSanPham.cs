@@ -84,6 +84,7 @@ namespace PBL3.GUI.FrmCon
         {
             hienThiSanPhamLenListView(Function.Instance.getAllSanPham());
             resetControl();
+            lbDanhMuc.SelectedIndex = -1;
         }
 
         private void setDataCombobox()

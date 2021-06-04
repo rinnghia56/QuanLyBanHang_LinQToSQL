@@ -122,6 +122,7 @@ namespace PBL3.GUI.FrmCon
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtTen);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(35, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(421, 185);

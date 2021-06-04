@@ -464,8 +464,6 @@ namespace PBL3.BusinessLogic
             return db.PhieuNhaps.Any(pn => pn.MaPhieuNhap == maPN);
         }
         
-        
-        
         //Chuyển đổi từ PM sang dạng 24h
         public string ConvertTimeTo24(string hour)
         {
@@ -594,6 +592,132 @@ namespace PBL3.BusinessLogic
             }
         }
 
+        public bool deletePhieuNhapCT(string maphieu,String maSp)
+        {
+            try {
+                CT_PhieuNhap ct = getCTPhieuNhap(maphieu, maSp);
+                db.CT_PhieuNhap.Remove(ct);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        //=====================Bán hàng================
+        public bool checkHoaDon(string maHD)
+        {
+            return db.HoaDons.Any(hd => hd.MaHD == maHD);
+        }
+        public bool createHoaDon(string maHD, string maTK, DateTime ngayTao)
+        {
+            try
+            {
+                db.HoaDons.Add(new HoaDon
+                {
+                    MaHD = maHD,
+                    ID_TK = maTK,
+                    NgayLap = ngayTao
+                });
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool creatCTHoaDon(string maphieu, string maSP, string soLuong,decimal thanhTien)
+        {
+            try
+            {
+                int soLuongSP = Convert.ToInt32(soLuong);
+                db.CT_HoaDon.Add(new CT_HoaDon
+                {
+                    MaHD = maphieu,
+                    MaSP = maSP,
+                    SoLuong = soLuongSP,
+                    ThanhTien = thanhTien
+                });
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public CT_HoaDon getCTHoaDon(string maphieu, string maSp)
+        {
+            CT_HoaDon hd = db.CT_HoaDon.FirstOrDefault(x => (x.MaHD == maphieu && x.MaSP == maSp));
+            return hd;
+        }
+
+        public bool updateCTHoaDon(string maphieu, string maSp, string soLuong,decimal thanhTien)
+        {
+            try
+            {
+                int soLuongSP = Convert.ToInt32(soLuong);
+                CT_HoaDon ct = getCTHoaDon(maphieu, maSp);
+                ct.SoLuong = soLuongSP;
+                ct.ThanhTien = thanhTien;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public int getSoLuongTon(string maSp)
+        {
+            SanPham sp = GetSanPham(maSp);
+            return (int)sp.SLTon;
+        }
+        public KhachHang getKhachBySDT(string sdt)
+        {
+           KhachHang khReturn =  db.KhachHangs.FirstOrDefault(kh => kh.SDT == sdt);
+            return khReturn;
+        }
+        private decimal getGiaSP(string maSP)
+        {
+            SanPham sp = db.SanPhams.FirstOrDefault(x => x.MaSP == maSP);
+            return (decimal)sp.GiaBan;
+        }
+        public decimal getTongGiaSP(string maSp,int soLuong)
+        {
+            return getGiaSP(maSp) * (decimal)soLuong; 
+        }
+        private HoaDon getHD(string maHD)
+        {
+            if (!checkHoaDon(maHD)) return null;
+            return db.HoaDons.FirstOrDefault(hd => hd.MaHD == maHD);
+        }
+        public bool updateHoaDonBan(string maHD, decimal TongGia, string maKH)
+        {
+            try
+            {
+                HoaDon hd = getHD(maHD);
+                if (hd == null) return false;
+                if (maKH == null)
+                {
+                    hd.TongTien = TongGia;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    hd.TongTien = TongGia;
+                    hd.ID_KH = maKH;
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
 

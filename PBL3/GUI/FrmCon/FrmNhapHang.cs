@@ -31,7 +31,6 @@ namespace PBL3.GUI.FrmCon
             cbbSanPham.ValueMember = "MaSP";
             cbbSanPham.DisplayMember = "TenSP";
             cbbSanPham.SelectedIndex = -1;
-
         }    
         private void FrmNhapHang_Load(object sender, EventArgs e)
         {
@@ -104,6 +103,13 @@ namespace PBL3.GUI.FrmCon
                 }
             }
 
+            int soLuong;
+            if(!Int32.TryParse(txtSoLuong.Text,out soLuong))
+            {
+                MessageBox.Show("Số lượng ko hợp lệ");
+                txtSoLuong.Focus();
+                return;
+            }
            
              if (!Function.Instance.checkPhieuNhap(txtMaPN.Text)) //Nếu mã phiếu nhập chưa đc tạo
              {
@@ -117,11 +123,13 @@ namespace PBL3.GUI.FrmCon
             lvi.SubItems.Add(Function.Instance.GetSanPham(masp.Trim()).TenSP);
             lvi.SubItems.Add(txtSoLuong.Text);
             lvsanpham.Items.Add(lvi);
+            
             if (!Function.Instance.creatCTPhieuNhap(txtMaPN.Text, cbbSanPham.SelectedValue.ToString().Trim(), txtSoLuong.Text))
             {
                 MessageBox.Show("Lỗi");
                 return;
             }
+
             cbbSanPham.SelectedIndex = -1;
             txtSoLuong.Text = "";
         }
@@ -133,8 +141,15 @@ namespace PBL3.GUI.FrmCon
 
         private void hihiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!Function.Instance.deletePhieuNhapCT(txtMaPN.Text, cbbSanPham.SelectedValue.ToString().Trim()))
+            {
+                MessageBox.Show("Lỗi");
+                return;
+            }
             lvsanpham.Items.Remove(lvsanpham.SelectedItems[0]);
             txtSoLuong.Text="";
+
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -144,6 +159,14 @@ namespace PBL3.GUI.FrmCon
                 MessageBox.Show("Chọn 1 sản phẩm cần cập nhật");
                 return;
             }
+            int soLuong;
+            if (!Int32.TryParse(txtSoLuong.Text, out soLuong))
+            {
+                MessageBox.Show("Số lượng ko hợp lệ");
+                txtSoLuong.Focus();
+                return;
+            }
+
             string masp = cbbSanPham.SelectedValue.ToString();
             bool check = false;
             foreach (ListViewItem i in lvsanpham.Items)
@@ -160,7 +183,7 @@ namespace PBL3.GUI.FrmCon
                 return;
             }
 
-            lvsanpham.SelectedItems[0].SubItems[2].Text=txtSoLuong.Text;
+            lvsanpham.SelectedItems[0].SubItems[2].Text = txtSoLuong.Text;
             if (!Function.Instance.updatePhieuNhap(txtMaPN.Text, masp.Trim(), txtSoLuong.Text))
             {
                 MessageBox.Show("Loi");
@@ -180,10 +203,19 @@ namespace PBL3.GUI.FrmCon
             cbbSanPham.SelectedValue = lvi.SubItems[0].Text;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
-            CT_PhieuNhap ct = Function.Instance.getCTPhieuNhap(txtMaPN.Text, lvsanpham.SelectedItems[0].SubItems[0].Text.Trim());
-            MessageBox.Show(ct.MaPhieuNhap + ct.MaSP + ct.SoLuong);
+
+        }
+
+        private void cbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
