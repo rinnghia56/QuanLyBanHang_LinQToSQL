@@ -718,6 +718,21 @@ namespace PBL3.BusinessLogic
                 return false;
             }
         }
+        public bool tangDiemKH(string maKH)
+        {
+            try
+            {
+                KhachHang kh = GetKhach(maKH);
+                kh.DiemTichLuy = kh.DiemTichLuy + 1;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
 

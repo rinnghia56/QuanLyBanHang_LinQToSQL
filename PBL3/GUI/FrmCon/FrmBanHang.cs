@@ -28,10 +28,40 @@ namespace PBL3.GUI.FrmCon
 
         private void btnTao_Click(object sender, EventArgs e)
         {
-            txtMaPN.Text = Function.Instance.CreateKey("HD");
-            txtMaTK.Text = IDTaiKhoan.Trim();
-            txtTenTK.Text = Function.Instance.getnameOfUser(IDTaiKhoan.Trim());
-            dateTimePicker1.Value = DateTime.Now;
+            if (txtMaPN.Text.Length < 2)
+            {
+                txtMaPN.Text = Function.Instance.CreateKey("HD");
+                txtMaTK.Text = IDTaiKhoan.Trim();
+                txtTenTK.Text = Function.Instance.getnameOfUser(IDTaiKhoan.Trim());
+                dateTimePicker1.Value = DateTime.Now;
+            }
+            else
+            {
+                if (lvsanpham.Items.Count == 0)
+                {
+                    MessageBox.Show("Hãy thêm sản phẩm vào danh sách");
+                    return;
+                }
+                decimal tongGia = Convert.ToDecimal(txtTong.Text);
+                string maKH = null;
+                if (txtMaKhach.Text.Length > 2) maKH = txtMaKhach.Text.Trim();
+                if (!Function.Instance.updateHoaDonBan(txtMaPN.Text, tongGia, maKH))
+                {
+                    MessageBox.Show("Lỗi");
+                    return;
+                }
+                MessageBox.Show("Lưu hoá đơn thành công");
+                txtMaPN.Text = "";
+                txtMaTK.Text = "";
+                txtTenTK.Text = "";
+                txtSdt.Text = "";
+                txtMaKhach.Text = "";
+                txtTenKhach.Text = "";
+                lvsanpham.Items.Clear();
+                cbbSanPham.SelectedIndex = -1;
+                txtSoLuong.Text = "";
+                txtTong.Text = "";
+            }
         }
         private void setcbb()
         {
@@ -84,7 +114,7 @@ namespace PBL3.GUI.FrmCon
             //Tạo hoá đơn
             if (!Function.Instance.checkHoaDon(txtMaPN.Text)) //Nếu hoá đơn chưa đc tạo thì tạo mới
             {
-                if (!Function.Instance.createPhieuNhap(txtMaPN.Text, txtMaTK.Text, dateTimePicker1.Value))
+                if (!Function.Instance.createHoaDon(txtMaPN.Text, txtMaTK.Text, dateTimePicker1.Value))
                 {
                     MessageBox.Show("Lỗi");
                     return;
@@ -157,11 +187,24 @@ namespace PBL3.GUI.FrmCon
                 return;
             }
             decimal tong = 0;
-
             SanPham sp = Function.Instance.GetSanPham(masp.Trim());
             decimal thanhTien = Function.Instance.getTongGiaSP(sp.MaSP, Convert.ToInt32(txtSoLuong.Text));
+            
+            //Update ListView
             lvsanpham.SelectedItems[0].SubItems[2].Text = txtSoLuong.Text;
             lvsanpham.SelectedItems[0].SubItems[4].Text = thanhTien+"";
+
+            //Update DB
+            if (!Function.Instance.updateCTHoaDon(txtMaPN.Text, masp.Trim(), txtSoLuong.Text,thanhTien))
+            {
+                MessageBox.Show("Loi");
+            }
+            else
+            {
+                MessageBox.Show("Update thành công");
+            }
+
+            //Update txtTong
             foreach (ListViewItem lv in lvsanpham.Items)
             {
                 tong += Convert.ToDecimal(lv.SubItems[4].Text.Trim());
@@ -178,12 +221,17 @@ namespace PBL3.GUI.FrmCon
             }
             decimal tongGia = Convert.ToDecimal(txtTong.Text);
             string maKH = null;
+            
             if (txtMaKhach.Text.Length > 2) maKH = txtMaKhach.Text.Trim();
             if (!Function.Instance.updateHoaDonBan(txtMaPN.Text, tongGia, maKH))
             {
                 MessageBox.Show("Lỗi");
                 return;
             }
+            
+            //Tăng điểm cho khách
+            Function.Instance.tangDiemKH(txtMaKhach.Text);
+
             MessageBox.Show("Tạo mới hoá đơn thành công");
             txtMaPN.Text = "";
             txtMaTK.Text = "";
@@ -194,6 +242,7 @@ namespace PBL3.GUI.FrmCon
             lvsanpham.Items.Clear();
             cbbSanPham.SelectedIndex = -1;
             txtSoLuong.Text = "";
+            txtTong.Text = "";
         }
 
         private void cbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
