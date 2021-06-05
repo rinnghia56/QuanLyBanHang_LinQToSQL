@@ -732,7 +732,53 @@ namespace PBL3.BusinessLogic
                 return false;
             }
         }
+        public bool deleteHoaDonCT(string maphieu, String maSp)
+        {
+            try
+            {
+                CT_HoaDon ct = getCTHoaDon(maphieu, maSp);
+                db.CT_HoaDon.Remove(ct);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        //======================Thống kê==============
+        public List<HoaDon> getAllHoaDon()
+        {
+            return db.HoaDons.OrderByDescending(x => x.MaHD).ToList();
+        }
+        public List<HoaDon> getHoaDonFromDateToDate(DateTime tgTruoc, DateTime tgSau)
+        {
+            //return db.HoaDons..ToList();
+            if(tgSau==tgTruoc) return db.HoaDons.Where(hd=>hd.NgayLap == tgTruoc).OrderByDescending(hd => hd.MaHD).ToList();
+            return db.HoaDons.Where(hd => hd.NgayLap >= tgTruoc && hd.NgayLap <= tgSau).OrderByDescending(hd => hd.MaHD).ToList();
+        }
 
+        public List<PhieuNhap> getAllPhieuNhap()
+        {
+            return db.PhieuNhaps.OrderByDescending(x => x.MaPhieuNhap).ToList();
+        }
+
+        public List<CT_HoaDon> GetCT_HoaDonTheoMaHD(string maHD)
+        {
+            return db.CT_HoaDon.Where(ct => ct.MaHD == maHD).ToList();
+        }
+
+        public List<PhieuNhap> getPhieuNhapFromDateToDate(DateTime tgTruoc, DateTime tgSau)
+        {
+            //return db.HoaDons..ToList();
+            if (tgSau == tgTruoc) return db.PhieuNhaps.Where(pn => pn.NgayNhap == tgTruoc).OrderByDescending(pn => pn.MaPhieuNhap).ToList();
+            return db.PhieuNhaps.Where(pn => pn.NgayNhap >= tgTruoc && pn.NgayNhap <= tgSau).OrderByDescending(hd => hd.MaPhieuNhap).ToList();
+        }
+
+        public List<CT_PhieuNhap> GetCT_PhieuNhapTheoMaPN(string maPN)
+        {
+            return db.CT_PhieuNhap.Where(ct => ct.MaPhieuNhap == maPN).ToList();
+        }
     }
 }
 

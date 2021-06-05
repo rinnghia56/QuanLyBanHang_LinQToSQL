@@ -164,7 +164,9 @@ namespace PBL3.GUI.FrmCon
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(459, 200);
+            this.btnXoa.Image = global::PBL3.Properties.Resources.Close_2_icon;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(450, 200);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(107, 39);
             this.btnXoa.TabIndex = 6;
@@ -175,7 +177,9 @@ namespace PBL3.GUI.FrmCon
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(320, 200);
+            this.btnLuu.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(311, 200);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(107, 39);
             this.btnLuu.TabIndex = 7;
@@ -206,11 +210,14 @@ namespace PBL3.GUI.FrmCon
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(181, 200);
+            this.btnThem.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(145, 200);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(107, 39);
+            this.btnThem.Size = new System.Drawing.Size(134, 39);
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm mới";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 

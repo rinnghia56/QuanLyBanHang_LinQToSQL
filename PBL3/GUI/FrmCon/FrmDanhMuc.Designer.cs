@@ -33,14 +33,14 @@ namespace PBL3.GUI.FrmCon
             this.label2 = new System.Windows.Forms.Label();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lvDanhMuc = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -81,39 +81,6 @@ namespace PBL3.GUI.FrmCon
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(289, 26);
             this.txtTen.TabIndex = 3;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(4, 33);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(119, 45);
-            this.btnThem.TabIndex = 4;
-            this.btnThem.Text = "Thêm mới";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(147, 33);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(119, 45);
-            this.btnCapNhat.TabIndex = 4;
-            this.btnCapNhat.Text = "Lưu";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(295, 33);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(119, 45);
-            this.btnXoa.TabIndex = 4;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // groupBox1
             // 
@@ -169,6 +136,46 @@ namespace PBL3.GUI.FrmCon
             // 
             this.columnHeader2.Text = "Tên danh mục";
             this.columnHeader2.Width = 224;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_1;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(4, 33);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(122, 45);
+            this.btnThem.TabIndex = 4;
+            this.btnThem.Text = "Thêm mới";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = global::PBL3.Properties.Resources.Close_2_icon;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(295, 33);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(120, 45);
+            this.btnXoa.TabIndex = 4;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCapNhat.Location = new System.Drawing.Point(154, 33);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(117, 45);
+            this.btnCapNhat.TabIndex = 4;
+            this.btnCapNhat.Text = "Lưu";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // FrmDanhMuc
             // 

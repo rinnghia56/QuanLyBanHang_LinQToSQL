@@ -41,8 +41,6 @@ namespace PBL3.GUI.FrmCon
             this.txtMaPN = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbbSanPham = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.lvsanpham = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,8 +50,10 @@ namespace PBL3.GUI.FrmCon
             this.mnuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -181,28 +181,6 @@ namespace PBL3.GUI.FrmCon
             this.cbbSanPham.TabIndex = 19;
             this.cbbSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbSanPham_SelectedIndexChanged);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(716, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 33);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(603, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,7 +229,7 @@ namespace PBL3.GUI.FrmCon
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuXoa});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 28);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // mnuXoa
@@ -281,27 +259,58 @@ namespace PBL3.GUI.FrmCon
             this.label9.TabIndex = 0;
             this.label9.Text = "Số lượng";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(212, 582);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(174, 32);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Tạo phiếu nhập hàng";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // btnLuu
             // 
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(453, 582);
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(467, 574);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(167, 32);
+            this.btnLuu.Size = new System.Drawing.Size(196, 44);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu phiếu nhập";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(221, 574);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(210, 44);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Tạo phiếu nhập ";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::PBL3.Properties.Resources.Update_icone;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(716, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 33);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Update";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::PBL3.Properties.Resources.Files_Add_List_icon;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(603, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 33);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmNhapHang
             // 

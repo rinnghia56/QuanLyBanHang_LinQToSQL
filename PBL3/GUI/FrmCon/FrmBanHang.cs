@@ -178,7 +178,7 @@ namespace PBL3.GUI.FrmCon
             if (!check)
             {
                 MessageBox.Show("Sản phẩm này chưa có trong danh sách, thêm vào ds");
-                MessageBox.Show(masp);
+               
                 return;
             }
             if (!checkSlMua(masp.Trim(), soLuong))
@@ -228,9 +228,12 @@ namespace PBL3.GUI.FrmCon
                 MessageBox.Show("Lỗi");
                 return;
             }
-            
-            //Tăng điểm cho khách
-            Function.Instance.tangDiemKH(txtMaKhach.Text);
+
+            if (maKH != null)
+            {
+                //Tăng điểm cho khách
+                Function.Instance.tangDiemKH(txtMaKhach.Text);
+            }
 
             MessageBox.Show("Tạo mới hoá đơn thành công");
             txtMaPN.Text = "";
@@ -260,8 +263,23 @@ namespace PBL3.GUI.FrmCon
 
         private void mnuXoa_Click(object sender, EventArgs e)
         {
+            if (!Function.Instance.deleteHoaDonCT(txtMaPN.Text, cbbSanPham.SelectedValue.ToString().Trim()))
+            {
+                MessageBox.Show("Lỗi");
+                return;
+            }
+            
+            //Xoá khỏi listView
             lvsanpham.Items.Remove(lvsanpham.SelectedItems[0]);
             txtSoLuong.Text = "";
+            
+            //Update txtTong
+            decimal tong = 0;
+            foreach (ListViewItem lv in lvsanpham.Items)
+            {
+                tong += Convert.ToDecimal(lv.SubItems[4].Text.Trim());
+            }
+            txtTong.Text = Math.Round(tong, 2) + "";
         }
 
         private void button2_Click(object sender, EventArgs e)

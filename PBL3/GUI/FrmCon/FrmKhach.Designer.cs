@@ -201,17 +201,22 @@ namespace PBL3.GUI.FrmCon
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_1;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(4, 33);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(119, 45);
+            this.btnThem.Size = new System.Drawing.Size(121, 45);
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm mới";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = global::PBL3.Properties.Resources.Close_2_icon;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(295, 33);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(119, 45);
@@ -223,7 +228,9 @@ namespace PBL3.GUI.FrmCon
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(147, 33);
+            this.btnCapNhat.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCapNhat.Location = new System.Drawing.Point(154, 33);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(119, 45);
             this.btnCapNhat.TabIndex = 4;

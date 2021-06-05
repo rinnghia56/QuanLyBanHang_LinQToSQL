@@ -30,13 +30,11 @@ namespace PBL3.GUI.FrmCon
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.mnuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnTao = new System.Windows.Forms.Button();
             this.cbbSanPham = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -65,28 +63,12 @@ namespace PBL3.GUI.FrmCon
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnTao = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(453, 581);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(167, 32);
-            this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "Lưu hoá đơn";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // mnuXoa
-            // 
-            this.mnuXoa.Name = "mnuXoa";
-            this.mnuXoa.Size = new System.Drawing.Size(104, 24);
-            this.mnuXoa.Text = "Xoá";
-            this.mnuXoa.Click += new System.EventHandler(this.mnuXoa_Click);
             // 
             // contextMenuStrip1
             // 
@@ -94,7 +76,15 @@ namespace PBL3.GUI.FrmCon
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuXoa});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 28);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 30);
+            // 
+            // mnuXoa
+            // 
+            this.mnuXoa.Image = global::PBL3.Properties.Resources.Trash_can_icon;
+            this.mnuXoa.Name = "mnuXoa";
+            this.mnuXoa.Size = new System.Drawing.Size(108, 26);
+            this.mnuXoa.Text = "Xoá";
+            this.mnuXoa.Click += new System.EventHandler(this.mnuXoa_Click);
             // 
             // columnHeader3
             // 
@@ -110,17 +100,6 @@ namespace PBL3.GUI.FrmCon
             // 
             this.columnHeader1.Text = "Mã sản phẩm";
             this.columnHeader1.Width = 168;
-            // 
-            // btnTao
-            // 
-            this.btnTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTao.Location = new System.Drawing.Point(212, 581);
-            this.btnTao.Name = "btnTao";
-            this.btnTao.Size = new System.Drawing.Size(174, 32);
-            this.btnTao.TabIndex = 7;
-            this.btnTao.Text = "Tạo hoá đơn";
-            this.btnTao.UseVisualStyleBackColor = true;
-            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // cbbSanPham
             // 
@@ -154,18 +133,23 @@ namespace PBL3.GUI.FrmCon
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Image = global::PBL3.Properties.Resources.Update_icone;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Location = new System.Drawing.Point(716, 24);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(107, 33);
+            this.btnUpdate.Size = new System.Drawing.Size(94, 33);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::PBL3.Properties.Resources.Files_Add_List_icon;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(603, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(107, 33);
@@ -317,7 +301,9 @@ namespace PBL3.GUI.FrmCon
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::PBL3.Properties.Resources.Search_icon__3_;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Location = new System.Drawing.Point(735, 22);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 28);
@@ -420,6 +406,32 @@ namespace PBL3.GUI.FrmCon
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Họ tên:";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(479, 580);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(192, 38);
+            this.btnLuu.TabIndex = 6;
+            this.btnLuu.Text = "Lưu hoá đơn";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnTao
+            // 
+            this.btnTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTao.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
+            this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTao.Location = new System.Drawing.Point(238, 580);
+            this.btnTao.Name = "btnTao";
+            this.btnTao.Size = new System.Drawing.Size(196, 38);
+            this.btnTao.TabIndex = 7;
+            this.btnTao.Text = "Tạo hoá đơn";
+            this.btnTao.UseVisualStyleBackColor = true;
+            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // FrmBanHang
             // 

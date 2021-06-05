@@ -51,6 +51,8 @@ namespace PBL3.GUI
 
             //Set label theo tên của tài khoản đăng nhập
             lblTenTaiKhoan.Text = Function.Instance.getnameOfUser(IDTaiKhoan);
+
+            motrangcon(new FrmHome());
         }
        
         private void motrangcon(Form trangcon)
@@ -103,7 +105,7 @@ namespace PBL3.GUI
             clickButton(pnChay, pnChay_Danhmuc, pnChay_Kho, pnChay_SP);
             pnChay.Top = btnThongKe.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
-            //motrangcon(new FrmThongKe());
+            motrangcon(new FrmThongKe());
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)

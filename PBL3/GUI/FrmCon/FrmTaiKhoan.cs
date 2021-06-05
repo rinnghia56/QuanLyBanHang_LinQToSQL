@@ -87,7 +87,11 @@ namespace PBL3.GUI.FrmCon
            
             bool type = false;
             if (radYes.Checked == true) type = true;
-            
+            if(txtMa.Text.Length<1)
+            {
+                MessageBox.Show("Không được để trống thông tin");
+                return;
+            }
             //Nếu tài khoản chưa có
             if (!Function.Instance.checkMaTK(txtMa.Text))
             {
