@@ -94,6 +94,11 @@ namespace PBL3.GUI
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
+            if (UserRight == false)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
             clickButton(pnChay, pnChay_Danhmuc, pnChay_Kho, pnChay_SP);
             pnChay.Top = btnTaiKhoan.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
@@ -102,6 +107,11 @@ namespace PBL3.GUI
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            if (UserRight == false)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             clickButton(pnChay, pnChay_Danhmuc, pnChay_Kho, pnChay_SP);
             pnChay.Top = btnThongKe.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
@@ -118,6 +128,11 @@ namespace PBL3.GUI
 
         private void btnKho_Click(object sender, EventArgs e)
         {
+            if (UserRight == false)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             clickButton(pnChay_Kho, pnChay, pnChay_Danhmuc, pnChay_SP);
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
             else pnbtnKho.Height = 151;
@@ -157,5 +172,17 @@ namespace PBL3.GUI
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+       
     }
 }

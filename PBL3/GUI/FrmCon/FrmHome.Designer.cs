@@ -29,7 +29,20 @@ namespace PBL3.GUI.FrmCon
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelGioBig = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // labelGioBig
+            // 
+            this.labelGioBig.AutoSize = true;
+            this.labelGioBig.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGioBig.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelGioBig.Location = new System.Drawing.Point(295, -9);
+            this.labelGioBig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelGioBig.Name = "labelGioBig";
+            this.labelGioBig.Size = new System.Drawing.Size(355, 135);
+            this.labelGioBig.TabIndex = 8;
+            this.labelGioBig.Text = "PBL3";
             // 
             // FrmHome
             // 
@@ -37,14 +50,18 @@ namespace PBL3.GUI.FrmCon
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(884, 625);
+            this.Controls.Add(this.labelGioBig);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmHome";
             this.Text = "FrmHome";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label labelGioBig;
     }
 }

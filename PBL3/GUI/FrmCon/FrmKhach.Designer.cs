@@ -200,12 +200,12 @@ namespace PBL3.GUI.FrmCon
             // 
             // btnThem
             // 
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_1;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(4, 33);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(121, 45);
+            this.btnThem.Size = new System.Drawing.Size(127, 45);
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm mới";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,7 +214,7 @@ namespace PBL3.GUI.FrmCon
             // 
             // btnXoa
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::PBL3.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(295, 33);
@@ -227,7 +227,7 @@ namespace PBL3.GUI.FrmCon
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.Image = global::PBL3.Properties.Resources.Save_icon;
             this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCapNhat.Location = new System.Drawing.Point(154, 33);
@@ -253,6 +253,7 @@ namespace PBL3.GUI.FrmCon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(884, 625);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);

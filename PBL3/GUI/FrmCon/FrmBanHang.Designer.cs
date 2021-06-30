@@ -203,12 +203,13 @@ namespace PBL3.GUI.FrmCon
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(6, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 20);
+            this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Sản phẩm";
+            this.label8.Text = "Sản phẩm:";
             // 
             // txtTong
             // 
+            this.txtTong.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -223,9 +224,9 @@ namespace PBL3.GUI.FrmCon
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(313, 30);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Số lượng";
+            this.label9.Text = "Số lượng:";
             // 
             // label10
             // 
@@ -353,9 +354,9 @@ namespace PBL3.GUI.FrmCon
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.Size = new System.Drawing.Size(97, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mã hoá đơn";
+            this.label1.Text = "Mã hoá đơn:";
             // 
             // label7
             // 
@@ -437,6 +438,7 @@ namespace PBL3.GUI.FrmCon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(884, 625);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnTao);

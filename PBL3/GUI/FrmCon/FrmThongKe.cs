@@ -93,28 +93,71 @@ namespace PBL3.GUI.FrmCon
         {
             listView1.Items.Clear();
             ListViewItem lvi;
-            foreach (HoaDon hd in Function.Instance.getHoaDonFromDateToDate(dt_ThgianTruoc.Value, dtThoiGianSau.Value))
+
+            if(txtMa.Text == "")
             {
-                
-                lvi = new ListViewItem(hd.MaHD);
-                lvi.SubItems.Add(Function.Instance.getnameOfUser(hd.ID_TK));
-                lvi.SubItems.Add(Convert.ToDateTime(hd.NgayLap).ToString("dd/MM/yyyy"));
-
-                KhachHang kh = Function.Instance.GetKhach(hd.ID_KH);
-                if (kh != null)
+                foreach (HoaDon hd in Function.Instance.getHoaDonFromDateToDate(dt_ThgianTruoc.Value, dtThoiGianSau.Value))
                 {
-                    lvi.SubItems.Add(kh.TenKH);
-
+                    lvi = new ListViewItem(hd.MaHD);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(hd.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(hd.NgayLap).ToString("dd/MM/yyyy"));
+                    KhachHang kh = Function.Instance.GetKhach(hd.ID_KH);
+                    if (kh != null)
+                    {
+                        lvi.SubItems.Add(kh.TenKH);
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add("");
+                    }
+                    lvi.SubItems.Add(hd.TongTien + "");
+                    listView1.Items.Add(lvi);
                 }
-                else
-                {
-                    lvi.SubItems.Add("");
-                }
-
-                lvi.SubItems.Add(hd.TongTien + "");
-                listView1.Items.Add(lvi);
-
+                return;
             }
+            if (txtMa.Text.Contains("HD"))
+            {
+                foreach (HoaDon hd in Function.Instance.GetHoaDonWithDateAndMaHD(dt_ThgianTruoc.Value, dtThoiGianSau.Value,txtMa.Text))
+                {
+                    lvi = new ListViewItem(hd.MaHD);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(hd.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(hd.NgayLap).ToString("dd/MM/yyyy"));
+                    KhachHang kh = Function.Instance.GetKhach(hd.ID_KH);
+                    if (kh != null)
+                    {
+                        lvi.SubItems.Add(kh.TenKH);
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add("");
+                    }
+                    lvi.SubItems.Add(hd.TongTien + "");
+                    listView1.Items.Add(lvi);
+                }
+                return;
+            }
+            if (txtMa.Text.Contains("NV")||txtMa.Text.Equals("ADMIN"))
+            {
+                foreach (HoaDon hd in Function.Instance.GetHoaDonWithDateAndMaNV(dt_ThgianTruoc.Value, dtThoiGianSau.Value, txtMa.Text))
+                {
+                    lvi = new ListViewItem(hd.MaHD);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(hd.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(hd.NgayLap).ToString("dd/MM/yyyy"));
+                    KhachHang kh = Function.Instance.GetKhach(hd.ID_KH);
+                    if (kh != null)
+                    {
+                        lvi.SubItems.Add(kh.TenKH);
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add("");
+                    }
+                    lvi.SubItems.Add(hd.TongTien + "");
+                    listView1.Items.Add(lvi);
+                }
+                return;
+            }
+            
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -134,13 +177,35 @@ namespace PBL3.GUI.FrmCon
         {
             lvPhieuNhap.Items.Clear();
             ListViewItem lvi;
-            foreach (PhieuNhap pn in Function.Instance.getPhieuNhapFromDateToDate(dt_timeTruoc.Value, dt_TimeSau.Value))
+            if (txtMa2.Text == "")
             {
-
-                lvi = new ListViewItem(pn.MaPhieuNhap);
-                lvi.SubItems.Add(Function.Instance.getnameOfUser(pn.ID_TK));
-                lvi.SubItems.Add(Convert.ToDateTime(pn.NgayNhap).ToString("dd/MM/yyyy"));
-                lvPhieuNhap.Items.Add(lvi);
+                foreach (PhieuNhap pn in Function.Instance.getPhieuNhapFromDateToDate(dt_timeTruoc.Value, dt_TimeSau.Value))
+                {
+                    lvi = new ListViewItem(pn.MaPhieuNhap);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(pn.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(pn.NgayNhap).ToString("dd/MM/yyyy"));
+                    lvPhieuNhap.Items.Add(lvi);
+                }
+            }
+            if (txtMa2.Text.Contains("PN") )
+            {
+                foreach (PhieuNhap pn in Function.Instance.GetPhieuNhapWithDateAndMaPN(dt_timeTruoc.Value, dt_TimeSau.Value,txtMa2.Text))
+                {
+                    lvi = new ListViewItem(pn.MaPhieuNhap);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(pn.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(pn.NgayNhap).ToString("dd/MM/yyyy"));
+                    lvPhieuNhap.Items.Add(lvi);
+                }
+            }
+            if (txtMa2.Text.Contains("NV") || txtMa2.Text.Equals("ADMIN"))
+            {
+                foreach (PhieuNhap pn in Function.Instance.GetPhieuNhapWithDateAndMaNV(dt_timeTruoc.Value, dt_TimeSau.Value, txtMa2.Text))
+                {
+                    lvi = new ListViewItem(pn.MaPhieuNhap);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(pn.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(pn.NgayNhap).ToString("dd/MM/yyyy"));
+                    lvPhieuNhap.Items.Add(lvi);
+                }
             }
         }
 
@@ -162,6 +227,113 @@ namespace PBL3.GUI.FrmCon
 
             FrmCTNhap frm = new FrmCTNhap(lvPhieuNhap.SelectedItems[0].Text.Trim());
             frm.ShowDialog();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchMa_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            ListViewItem lvi;
+            if (txtMa.Text == "")
+            {
+                return;
+            }
+            if (txtMa.Text.Contains("NV")|| txtMa.Text.Contains("ADMIN"))
+            {
+    
+                foreach (HoaDon hd in Function.Instance.getHoaDonByMaNV(txtMa.Text))
+                {
+                    lvi = new ListViewItem(hd.MaHD);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(hd.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(hd.NgayLap).ToString("dd/MM/yyyy"));
+                    KhachHang kh = Function.Instance.GetKhach(hd.ID_KH);
+                    if (kh != null)
+                    {
+                        lvi.SubItems.Add(kh.TenKH);
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add("");
+                    }
+                    lvi.SubItems.Add(hd.TongTien + "");
+                    listView1.Items.Add(lvi);
+                }
+                return;
+            }
+            if (txtMa.Text.Contains("HD"))
+            {
+                foreach (HoaDon hd in Function.Instance.getHoaDonByMaHD(txtMa.Text))
+                {
+                    lvi = new ListViewItem(hd.MaHD);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(hd.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(hd.NgayLap).ToString("dd/MM/yyyy"));
+                    KhachHang kh = Function.Instance.GetKhach(hd.ID_KH);
+                    if (kh != null)
+                    {
+                        lvi.SubItems.Add(kh.TenKH);
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add("");
+                    }
+                    lvi.SubItems.Add(hd.TongTien + "");
+                    listView1.Items.Add(lvi);
+                }
+            }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            List<int> soChan = new List<int>();
+            List<int> so = new List<int>();
+            so.Add(1);
+            so.Add(2);
+            so.Add(3);
+            so.Add(8);
+            string s = "";
+            soChan = so.Where(x => x % 2 == 0).ToList();
+            foreach(int nb in soChan)
+            {
+                s += nb;
+            }
+
+            MessageBox.Show(txtMa.Text+"***");
+        }
+
+        private void txtMa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearchMa2_Click(object sender, EventArgs e)
+        {
+            lvPhieuNhap.Items.Clear();
+            ListViewItem lvi;
+            if (txtMa2.Text.Contains("NV") || txtMa2.Text.Contains("ADMIN"))
+            {
+                foreach (PhieuNhap pn in Function.Instance.getPhieuNhapByMaNV(txtMa2.Text))
+                {
+
+                    lvi = new ListViewItem(pn.MaPhieuNhap);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(pn.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(pn.NgayNhap).ToString("dd/MM/yyyy"));
+                    lvPhieuNhap.Items.Add(lvi);
+                }
+            }
+            if (txtMa2.Text.Contains("PN"))
+            {
+                foreach (PhieuNhap pn in Function.Instance.getPhieuNhapByMaPN(txtMa2.Text))
+                {
+                    lvi = new ListViewItem(pn.MaPhieuNhap);
+                    lvi.SubItems.Add(Function.Instance.getnameOfUser(pn.ID_TK));
+                    lvi.SubItems.Add(Convert.ToDateTime(pn.NgayNhap).ToString("dd/MM/yyyy"));
+                    lvPhieuNhap.Items.Add(lvi);
+                }
+            }
         }
     }
 }

@@ -58,6 +58,8 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -139,9 +141,11 @@ namespace PBL3.GUI.FrmCon
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnXoa);
+            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.cbbDanhMuc);
             this.groupBox3.Controls.Add(this.txtDonGia);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(this.txtTen);
             this.groupBox3.Controls.Add(this.txtSoLuong);
@@ -163,7 +167,7 @@ namespace PBL3.GUI.FrmCon
             // 
             // btnXoa
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::PBL3.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(450, 200);
@@ -387,6 +391,33 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader5.Text = "Giá ";
             this.columnHeader5.Width = 149;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(145, 200);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 39);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Thêm mới";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(311, 200);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 39);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Lưu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // FrmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,5 +477,7 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

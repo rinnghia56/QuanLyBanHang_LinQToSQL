@@ -753,9 +753,43 @@ namespace PBL3.BusinessLogic
         }
         public List<HoaDon> getHoaDonFromDateToDate(DateTime tgTruoc, DateTime tgSau)
         {
-            //return db.HoaDons..ToList();
             if(tgSau==tgTruoc) return db.HoaDons.Where(hd=>hd.NgayLap == tgTruoc).OrderByDescending(hd => hd.MaHD).ToList();
             return db.HoaDons.Where(hd => hd.NgayLap >= tgTruoc && hd.NgayLap <= tgSau).OrderByDescending(hd => hd.MaHD).ToList();
+        }
+        
+        public List<HoaDon> GetHoaDonWithDateAndMaHD(DateTime tgTruoc, DateTime tgSau,String maHD)
+        {
+            if (tgSau == tgTruoc) return db.HoaDons.Where(hd => hd.NgayLap == tgTruoc && hd.MaHD==maHD).OrderByDescending(hd => hd.MaHD).ToList();
+            return db.HoaDons.Where(hd => hd.NgayLap >= tgTruoc && hd.NgayLap <= tgSau && hd.MaHD == maHD).OrderByDescending(hd => hd.MaHD).ToList();
+        }
+
+        public List<HoaDon> GetHoaDonWithDateAndMaNV(DateTime tgTruoc, DateTime tgSau, String maNV)
+        {
+            if (tgSau == tgTruoc) return db.HoaDons.Where(hd => hd.NgayLap == tgTruoc && hd.ID_TK == maNV).OrderByDescending(hd => hd.MaHD).ToList();
+            return db.HoaDons.Where(hd => hd.NgayLap >= tgTruoc && hd.NgayLap <= tgSau && hd.ID_TK == maNV).OrderByDescending(hd => hd.MaHD).ToList();
+        }
+
+
+        
+        
+        public List<HoaDon> getHoaDonByMaNV(String maNV)
+        {
+            return db.HoaDons.Where(hd => hd.ID_TK == maNV).OrderByDescending(hd=>hd.NgayLap).ToList();
+        }
+
+        public List<HoaDon> getHoaDonByMaHD(String maHD)
+        {
+            return db.HoaDons.Where(hd => hd.MaHD == maHD).OrderByDescending(hd => hd.NgayLap).ToList();
+        }
+
+        public List<PhieuNhap> getPhieuNhapByMaNV(String maNV)
+        {
+            return db.PhieuNhaps.Where(hd => hd.ID_TK == maNV).OrderByDescending(hd => hd.NgayNhap).ToList();
+        }
+
+        public List<PhieuNhap> getPhieuNhapByMaPN(String maPN)
+        {
+            return db.PhieuNhaps.Where(hd => hd.MaPhieuNhap == maPN).OrderByDescending(hd => hd.NgayNhap).ToList();
         }
 
         public List<PhieuNhap> getAllPhieuNhap()
@@ -770,9 +804,18 @@ namespace PBL3.BusinessLogic
 
         public List<PhieuNhap> getPhieuNhapFromDateToDate(DateTime tgTruoc, DateTime tgSau)
         {
-            //return db.HoaDons..ToList();
             if (tgSau == tgTruoc) return db.PhieuNhaps.Where(pn => pn.NgayNhap == tgTruoc).OrderByDescending(pn => pn.MaPhieuNhap).ToList();
             return db.PhieuNhaps.Where(pn => pn.NgayNhap >= tgTruoc && pn.NgayNhap <= tgSau).OrderByDescending(hd => hd.MaPhieuNhap).ToList();
+        }
+        public List<PhieuNhap> GetPhieuNhapWithDateAndMaPN(DateTime tgTruoc, DateTime tgSau, string maPN)
+        {
+            if (tgSau == tgTruoc) return db.PhieuNhaps.Where(pn => pn.NgayNhap == tgTruoc && pn.MaPhieuNhap==maPN).OrderByDescending(pn => pn.MaPhieuNhap).ToList();
+            return db.PhieuNhaps.Where(pn => pn.NgayNhap >= tgTruoc && pn.NgayNhap <= tgSau && pn.MaPhieuNhap == maPN).OrderByDescending(hd => hd.MaPhieuNhap).ToList();
+        }
+        public List<PhieuNhap> GetPhieuNhapWithDateAndMaNV(DateTime tgTruoc, DateTime tgSau, string maNV)
+        {
+            if (tgSau == tgTruoc) return db.PhieuNhaps.Where(pn => pn.NgayNhap == tgTruoc && pn.ID_TK == maNV).OrderByDescending(pn => pn.MaPhieuNhap).ToList();
+            return db.PhieuNhaps.Where(pn => pn.NgayNhap >= tgTruoc && pn.NgayNhap <= tgSau && pn.ID_TK == maNV).OrderByDescending(hd => hd.MaPhieuNhap).ToList();
         }
 
         public List<CT_PhieuNhap> GetCT_PhieuNhapTheoMaPN(string maPN)
