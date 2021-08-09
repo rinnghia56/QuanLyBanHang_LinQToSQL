@@ -25,13 +25,14 @@ namespace PBL3.GUI.FrmCon
         private void hienThiTaiKhoanLenListView(List<TaiKhoan> dsTaiKhoan)
         {
             lvTaiKhoan.Items.Clear();
+            clear();
+
             dsTaiKhoan.ForEach(tk =>
             {
                 ListViewItem lvi = new ListViewItem(tk.ID_TK);
                 lvi.SubItems.Add(tk.HoTen);
                 lvi.SubItems.Add(tk.SDT);
                 lvi.SubItems.Add(tk.Username );
-                lvi.SubItems.Add(tk.Password );
                 lvi.SubItems.Add(tk.type + "");
                 lvTaiKhoan.Items.Add(lvi);
             });
@@ -47,8 +48,7 @@ namespace PBL3.GUI.FrmCon
             txtName.Text = lvi.SubItems[1].Text.Trim();
             txtSDT.Text = lvi.SubItems[2].Text.Trim();
             txtUsername.Text = lvi.SubItems[3].Text.Trim();
-            txtPass.Text = lvi.SubItems[4].Text.Trim();
-            if (lvi.SubItems[5].Text == "True") radYes.Checked = true;
+            if (lvi.SubItems[4].Text == "True") radYes.Checked = true;
             else radNo.Checked = true;
             if (lvTaiKhoan.SelectedItems.Count > 1)
             {
@@ -153,6 +153,15 @@ namespace PBL3.GUI.FrmCon
             {
                 MessageBox.Show("Thất bại");
             }
+        }
+        private void clear()
+        {
+            txtPass.Text = "";
+            txtpass2.Text = "";
+            txtMa.Text = "";
+            txtUsername.Text = "";
+            txtSDT.Text = "";
+            txtName.Text = "";
         }
     }
 }

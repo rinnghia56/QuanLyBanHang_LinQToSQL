@@ -84,6 +84,10 @@ namespace PBL3.GUI.FrmCon
             decimal tong = 0;
             foreach (ListViewItem lv in listView1.Items)
             {
+                if (lv.SubItems[4].Text == null)
+                {
+                    continue;
+                }
                 tong += Convert.ToDecimal(lv.SubItems[4].Text.Trim());
             }
             txt_tong.Text = Math.Round(tong,2)+"";

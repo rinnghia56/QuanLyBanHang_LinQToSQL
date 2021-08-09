@@ -34,7 +34,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.txtMa = new System.Windows.Forms.TextBox();
@@ -52,6 +51,8 @@ namespace PBL3.GUI.FrmCon
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.txtpass2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader6});
             this.lvTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvTaiKhoan.FullRowSelect = true;
@@ -96,11 +96,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader4.Text = "Username";
             this.columnHeader4.Width = 158;
             // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Password";
-            this.columnHeader5.Width = 154;
-            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Quyền";
@@ -109,17 +104,17 @@ namespace PBL3.GUI.FrmCon
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 37);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.Size = new System.Drawing.Size(122, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã tài khoản:";
             // 
             // txtMa
             // 
             this.txtMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMa.Location = new System.Drawing.Point(131, 31);
+            this.txtMa.Location = new System.Drawing.Point(139, 24);
             this.txtMa.Name = "txtMa";
             this.txtMa.ReadOnly = true;
             this.txtMa.Size = new System.Drawing.Size(237, 26);
@@ -128,17 +123,17 @@ namespace PBL3.GUI.FrmCon
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 79);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Họ và tên:";
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(131, 73);
+            this.txtName.Location = new System.Drawing.Point(139, 103);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(237, 26);
             this.txtName.TabIndex = 2;
@@ -146,17 +141,17 @@ namespace PBL3.GUI.FrmCon
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 124);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(125, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Số điện thoại:";
             // 
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(131, 118);
+            this.txtSDT.Location = new System.Drawing.Point(139, 148);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(237, 26);
             this.txtSDT.TabIndex = 2;
@@ -164,17 +159,17 @@ namespace PBL3.GUI.FrmCon
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(421, 76);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(451, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(127, 20);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Password:";
+            this.label4.Text = "Mật khẩu mới:";
             // 
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(532, 76);
+            this.txtPass.Location = new System.Drawing.Point(574, 30);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(237, 26);
             this.txtPass.TabIndex = 2;
@@ -182,17 +177,17 @@ namespace PBL3.GUI.FrmCon
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(418, 37);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(25, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Username:";
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(532, 34);
+            this.txtUsername.Location = new System.Drawing.Point(139, 66);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(237, 26);
@@ -202,8 +197,8 @@ namespace PBL3.GUI.FrmCon
             // 
             this.groupBox1.Controls.Add(this.radNo);
             this.groupBox1.Controls.Add(this.radYes);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(411, 113);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(451, 109);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(292, 71);
             this.groupBox1.TabIndex = 3;
@@ -213,6 +208,7 @@ namespace PBL3.GUI.FrmCon
             // radNo
             // 
             this.radNo.AutoSize = true;
+            this.radNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radNo.Location = new System.Drawing.Point(192, 28);
             this.radNo.Name = "radNo";
             this.radNo.Size = new System.Drawing.Size(51, 24);
@@ -224,6 +220,7 @@ namespace PBL3.GUI.FrmCon
             // radYes
             // 
             this.radYes.AutoSize = true;
+            this.radYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radYes.Location = new System.Drawing.Point(17, 28);
             this.radYes.Name = "radYes";
             this.radYes.Size = new System.Drawing.Size(58, 24);
@@ -272,11 +269,31 @@ namespace PBL3.GUI.FrmCon
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // txtpass2
+            // 
+            this.txtpass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpass2.Location = new System.Drawing.Point(574, 69);
+            this.txtpass2.Name = "txtpass2";
+            this.txtpass2.Size = new System.Drawing.Size(237, 26);
+            this.txtpass2.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(447, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 20);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Xác nhận MK: ";
+            // 
             // FrmTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 625);
+            this.Controls.Add(this.txtpass2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThem);
@@ -327,7 +344,8 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.TextBox txtpass2;
+        private System.Windows.Forms.Label label6;
     }
 }

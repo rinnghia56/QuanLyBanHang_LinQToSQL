@@ -459,6 +459,32 @@ namespace PBL3.BusinessLogic
             return false;
         }
         //=========================Nhập hàng=================
+        private PhieuNhap getPN(string mapn)
+        {
+            if (!checkPhieuNhap(mapn)) return null;
+            return db.PhieuNhaps.FirstOrDefault(pn => pn.MaPhieuNhap == mapn);
+        }
+        private CT_PhieuNhap getCTPN(string maphieu)
+        {
+            CT_PhieuNhap ct = db.CT_PhieuNhap.FirstOrDefault(x => (x.MaPhieuNhap == maphieu));
+            return ct;
+        }
+        public bool HuyNhapHang(String maPn)
+        {
+            try
+            {
+                CT_PhieuNhap ct = getCTPN(maPn);
+                db.CT_PhieuNhap.Remove(ct);
+                PhieuNhap pn = getPN(maPn);
+                db.PhieuNhaps.Remove(pn);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public bool checkPhieuNhap(string maPN)
         {
             return db.PhieuNhaps.Any(pn => pn.MaPhieuNhap == maPN);
@@ -694,6 +720,28 @@ namespace PBL3.BusinessLogic
             if (!checkHoaDon(maHD)) return null;
             return db.HoaDons.FirstOrDefault(hd => hd.MaHD == maHD);
         }
+        private CT_HoaDon getCTHoaDon_Ma(string maphieu)
+        {
+            CT_HoaDon cthd = db.CT_HoaDon.FirstOrDefault(x => (x.MaHD == maphieu));
+            return cthd;
+        }
+        public bool HuyHD(String maHD)
+        {
+            try
+            {
+                CT_HoaDon ct = getCTHoaDon_Ma(maHD);
+                db.CT_HoaDon.Remove(ct);
+                HoaDon hd = getHD(maHD);
+                db.HoaDons.Remove(hd);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool updateHoaDonBan(string maHD, decimal TongGia, string maKH)
         {
             try
@@ -822,6 +870,19 @@ namespace PBL3.BusinessLogic
         {
             return db.CT_PhieuNhap.Where(ct => ct.MaPhieuNhap == maPN).ToList();
         }
+
+
+        //Tìm kiếm danh mục theo tên hoặc mã
+        public List<DanhMuc> findDanhMucs_ma(String ma_input)
+        {
+            return db.DanhMucs.Where(x => x.MaDM.Contains(ma_input)).ToList();
+        }
+        public List<DanhMuc> findDanhMucs_name(String nameInput)
+        {
+            return db.DanhMucs.Where(x => x.TenDM.Contains(nameInput)).ToList();
+        }
+
+       
     }
 }
 

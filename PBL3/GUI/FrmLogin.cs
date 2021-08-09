@@ -48,5 +48,20 @@ namespace PBL3.GUI
                 MessageBox.Show("Invalid username or password");
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

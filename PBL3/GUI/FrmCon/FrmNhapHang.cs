@@ -42,40 +42,18 @@ namespace PBL3.GUI.FrmCon
             txtMaTK.Text = IDTaiKhoan.Trim();
             txtTenTK.Text = Function.Instance.getnameOfUser(IDTaiKhoan.Trim());
             dateTimePicker1.Value = DateTime.Now;
+            txtTime.Text=dateTimePicker1.Value.ToString("MM/dd/yyyy  HH:mm:ss");
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //if (txtMaPN.Text.Length < 1)
-            //{
-            //    MessageBox.Show("Hãy tạo mới phiếu nhập");
-            //    return;
-            //}
-            //if ((cbbSanPham.SelectedIndex == -1) || txtSoLuong.Text.Length < 1)
-            //{
-            //    MessageBox.Show("Không được bỏ trống thông tin");
-            //    return;
-            //}
-            //int a = 0;
-            //if(!Int32.TryParse(txtSoLuong.Text,out a))
-            //{
-            //    MessageBox.Show("Thông tin ko hợp lệ");
-            //    return;
-            //}
-            //MessageBox.Show(dateTimePicker1.Value.ToString());
             if (lvsanpham.Items.Count == 0)
             {
                 MessageBox.Show("Hãy thêm sản phẩm vào danh sách");
                 return;
             }
-         
             MessageBox.Show("Tạo mới phiếu nhập thành công");
-            txtMaPN.Text = "";
-            txtMaTK.Text = "";
-            txtTenTK.Text = "";
-            lvsanpham.Items.Clear();
-            cbbSanPham.SelectedIndex = -1;
-            txtSoLuong.Text = "";
+            clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -134,10 +112,7 @@ namespace PBL3.GUI.FrmCon
             txtSoLuong.Text = "";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void hihiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -203,19 +178,26 @@ namespace PBL3.GUI.FrmCon
             cbbSanPham.SelectedValue = lvi.SubItems[0].Text;
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            if (Function.Instance.HuyNhapHang(txtMaPN.Text))
+            {
+                MessageBox.Show("Huỷ thành công");
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
         }
-
-        private void cbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        private void clear()
         {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
+            txtMaPN.Text = "";
+            txtMaTK.Text = "";
+            txtTenTK.Text = "";
+            lvsanpham.Items.Clear();
+            cbbSanPham.SelectedIndex = -1;
+            txtSoLuong.Text = "";
         }
     }
 }

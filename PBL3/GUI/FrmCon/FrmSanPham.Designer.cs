@@ -36,9 +36,11 @@ namespace PBL3.GUI.FrmCon
             this.btnAll = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -103,10 +103,12 @@ namespace PBL3.GUI.FrmCon
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
             this.groupBox1.Controls.Add(this.lbDanhMuc);
             this.groupBox1.Controls.Add(this.btnAll);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(174, 612);
@@ -118,7 +120,7 @@ namespace PBL3.GUI.FrmCon
             // 
             this.lbDanhMuc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDanhMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbDanhMuc.ForeColor = System.Drawing.Color.Blue;
             this.lbDanhMuc.FormattingEnabled = true;
             this.lbDanhMuc.ItemHeight = 20;
             this.lbDanhMuc.Location = new System.Drawing.Point(3, 45);
@@ -130,6 +132,7 @@ namespace PBL3.GUI.FrmCon
             // btnAll
             // 
             this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.ForeColor = System.Drawing.Color.Black;
             this.btnAll.Location = new System.Drawing.Point(24, 20);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(116, 32);
@@ -140,6 +143,7 @@ namespace PBL3.GUI.FrmCon
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Silver;
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.btnLuu);
@@ -157,6 +161,7 @@ namespace PBL3.GUI.FrmCon
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(0, 354);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(702, 258);
@@ -168,6 +173,7 @@ namespace PBL3.GUI.FrmCon
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Image = global::PBL3.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(450, 200);
@@ -177,6 +183,20 @@ namespace PBL3.GUI.FrmCon
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(311, 200);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 39);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Lưu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnLuu
             // 
@@ -210,6 +230,21 @@ namespace PBL3.GUI.FrmCon
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(173, 26);
             this.txtDonGia.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(145, 200);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 39);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Thêm mới";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnThem
             // 
@@ -256,50 +291,55 @@ namespace PBL3.GUI.FrmCon
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(386, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 20);
+            this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Đơn giá:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(386, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Số lượng:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(36, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Danh mục:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(36, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 20);
+            this.label2.Size = new System.Drawing.Size(46, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tên:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(38, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 20);
+            this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "Mã:";
             // 
@@ -390,33 +430,6 @@ namespace PBL3.GUI.FrmCon
             // 
             this.columnHeader5.Text = "Giá ";
             this.columnHeader5.Width = 149;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(145, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 39);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Thêm mới";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::PBL3.Properties.Resources.Save_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(311, 200);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 39);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // FrmSanPham
             // 

@@ -13,6 +13,7 @@ namespace PBL3.GUI.FrmCon
 {
     public partial class FrmDanhMuc : Form
     {
+        private bool chk = false;
         public FrmDanhMuc()
         {
             InitializeComponent();
@@ -107,5 +108,65 @@ namespace PBL3.GUI.FrmCon
             int sttDanhMuc = Function.Instance.layThuTuCuaMaDM(lvDanhMuc.Items[lvDanhMuc.Items.Count - 1].SubItems[0].Text.Trim());
             txtMa.Text = Function.Instance.setMaDM(sttDanhMuc+1);
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Hehe");
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtUsername.Text != "")
+                {
+                    timKiemDanhMuc(txtUsername.Text);
+                }
+                else
+                {
+                    hienThiToanBoDanhMuc();
+                }
+            }
+        }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            if (!chk)
+            {
+                txtUsername.Text = "";
+                chk = true;
+            }
+        }
+
+        private void timKiemDanhMuc(String input)
+        {
+            if (input.ToUpper().Contains("DM"))
+            {
+                lvDanhMuc.Items.Clear();
+                foreach (DanhMuc dm in Function.Instance.findDanhMucs_ma(input))
+                {
+                    ListViewItem lvi = new ListViewItem(dm.MaDM);
+                    lvi.SubItems.Add(dm.TenDM);
+                    lvDanhMuc.Items.Add(lvi);
+                }  
+            }
+            else
+            {
+                lvDanhMuc.Items.Clear();
+                foreach (DanhMuc dm in Function.Instance.findDanhMucs_name(input))
+                {
+                    ListViewItem lvi = new ListViewItem(dm.MaDM);
+                    lvi.SubItems.Add(dm.TenDM);
+                    lvDanhMuc.Items.Add(lvi);
+                }
+            }
+                
+        }
+
     }
 }

@@ -99,6 +99,7 @@ namespace PBL3.GUI
             this.txtPassword.TabIndex = 12;
             this.txtPassword.Text = "Password";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtUsername
             // 
@@ -112,6 +113,7 @@ namespace PBL3.GUI
             this.txtUsername.TabIndex = 11;
             this.txtUsername.Text = "Username";
             this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // label1
             // 
@@ -165,6 +167,7 @@ namespace PBL3.GUI
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

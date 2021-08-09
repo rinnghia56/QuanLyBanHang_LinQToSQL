@@ -34,6 +34,7 @@ namespace PBL3.GUI.FrmCon
                 txtMaTK.Text = IDTaiKhoan.Trim();
                 txtTenTK.Text = Function.Instance.getnameOfUser(IDTaiKhoan.Trim());
                 dateTimePicker1.Value = DateTime.Now;
+                txtTime.Text = dateTimePicker1.Value.ToString("MM/dd/yyyy  HH:mm:ss");
             }
             else
             {
@@ -51,16 +52,7 @@ namespace PBL3.GUI.FrmCon
                     return;
                 }
                 MessageBox.Show("Lưu hoá đơn thành công");
-                txtMaPN.Text = "";
-                txtMaTK.Text = "";
-                txtTenTK.Text = "";
-                txtSdt.Text = "";
-                txtMaKhach.Text = "";
-                txtTenKhach.Text = "";
-                lvsanpham.Items.Clear();
-                cbbSanPham.SelectedIndex = -1;
-                txtSoLuong.Text = "";
-                txtTong.Text = "";
+                clear();
             }
         }
         private void setcbb()
@@ -236,16 +228,7 @@ namespace PBL3.GUI.FrmCon
             }
 
             MessageBox.Show("Tạo mới hoá đơn thành công");
-            txtMaPN.Text = "";
-            txtMaTK.Text = "";
-            txtTenTK.Text = "";
-            txtSdt.Text = "";
-            txtMaKhach.Text = "";
-            txtTenKhach.Text = "";
-            lvsanpham.Items.Clear();
-            cbbSanPham.SelectedIndex = -1;
-            txtSoLuong.Text = "";
-            txtTong.Text = "";
+            clear();
         }
 
         private void cbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
@@ -280,6 +263,7 @@ namespace PBL3.GUI.FrmCon
                 tong += Convert.ToDecimal(lv.SubItems[4].Text.Trim());
             }
             txtTong.Text = Math.Round(tong, 2) + "";
+            cbbSanPham.SelectedIndex = -1;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -311,6 +295,32 @@ namespace PBL3.GUI.FrmCon
             ListViewItem lvi = lvsanpham.SelectedItems[0];
             txtSoLuong.Text = lvi.SubItems[2].Text.Trim();
             cbbSanPham.SelectedValue = lvi.SubItems[0].Text;
+        }
+        private void clear()
+        {
+            txtMaPN.Text = "";
+            txtMaTK.Text = "";
+            txtTenTK.Text = "";
+            txtSdt.Text = "";
+            txtMaKhach.Text = "";
+            txtTenKhach.Text = "";
+            lvsanpham.Items.Clear();
+            cbbSanPham.SelectedIndex = -1;
+            txtSoLuong.Text = "";
+            txtTong.Text = "";
+            txtTime.Text = "";
+        }
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            if (Function.Instance.HuyHD(txtMaPN.Text))
+            {
+                MessageBox.Show("Huỷ thành công");
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
         }
     }
 }

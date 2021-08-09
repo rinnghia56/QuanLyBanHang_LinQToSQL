@@ -34,11 +34,12 @@ namespace PBL3.GUI.FrmCon
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenTK = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtMaTK = new System.Windows.Forms.TextBox();
             this.txtMaPN = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbbSanPham = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@ namespace PBL3.GUI.FrmCon
             this.label9 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -62,44 +64,49 @@ namespace PBL3.GUI.FrmCon
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(27, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.Size = new System.Drawing.Size(147, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phiếu nhập:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(27, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.Size = new System.Drawing.Size(130, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã tài khoản:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(27, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.Size = new System.Drawing.Size(75, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Họ tên:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTime);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenTK);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.txtMaTK);
             this.groupBox1.Controls.Add(this.txtMaPN);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(838, 136);
@@ -107,36 +114,42 @@ namespace PBL3.GUI.FrmCon
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
+            // txtTime
+            // 
+            this.txtTime.BackColor = System.Drawing.Color.Silver;
+            this.txtTime.ForeColor = System.Drawing.Color.Black;
+            this.txtTime.Location = new System.Drawing.Point(582, 24);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(213, 26);
+            this.txtTime.TabIndex = 6;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(457, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 20);
+            this.label4.Size = new System.Drawing.Size(134, 22);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Ngày tạo:";
+            this.label4.Text = "Thời gian tạo:";
             // 
             // txtTenTK
             // 
-            this.txtTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTK.BackColor = System.Drawing.Color.Silver;
+            this.txtTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTK.ForeColor = System.Drawing.Color.Black;
             this.txtTenTK.Location = new System.Drawing.Point(162, 86);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.ReadOnly = true;
             this.txtTenTK.Size = new System.Drawing.Size(260, 26);
             this.txtTenTK.TabIndex = 1;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(540, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
             // txtMaTK
             // 
-            this.txtMaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTK.BackColor = System.Drawing.Color.Silver;
+            this.txtMaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTK.ForeColor = System.Drawing.Color.Black;
             this.txtMaTK.Location = new System.Drawing.Point(162, 55);
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.ReadOnly = true;
@@ -145,12 +158,22 @@ namespace PBL3.GUI.FrmCon
             // 
             // txtMaPN
             // 
-            this.txtMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPN.BackColor = System.Drawing.Color.Silver;
+            this.txtMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPN.ForeColor = System.Drawing.Color.Black;
             this.txtMaPN.Location = new System.Drawing.Point(162, 24);
             this.txtMaPN.Name = "txtMaPN";
             this.txtMaPN.ReadOnly = true;
             this.txtMaPN.Size = new System.Drawing.Size(260, 26);
             this.txtMaPN.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(584, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(208, 26);
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // groupBox2
             // 
@@ -162,28 +185,28 @@ namespace PBL3.GUI.FrmCon
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Blue;
             this.groupBox2.Location = new System.Drawing.Point(12, 163);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(860, 405);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin mặt hàng";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // cbbSanPham
             // 
             this.cbbSanPham.BackColor = System.Drawing.Color.White;
             this.cbbSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSanPham.FormattingEnabled = true;
-            this.cbbSanPham.Location = new System.Drawing.Point(104, 31);
+            this.cbbSanPham.Location = new System.Drawing.Point(93, 31);
             this.cbbSanPham.Name = "cbbSanPham";
             this.cbbSanPham.Size = new System.Drawing.Size(191, 28);
             this.cbbSanPham.TabIndex = 19;
-            this.cbbSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbSanPham_SelectedIndexChanged);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::PBL3.Properties.Resources.Update_icone;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(716, 31);
@@ -198,6 +221,7 @@ namespace PBL3.GUI.FrmCon
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::PBL3.Properties.Resources.Files_Add_List_icon;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(603, 31);
@@ -257,7 +281,6 @@ namespace PBL3.GUI.FrmCon
             this.mnuXoa});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(105, 28);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // mnuXoa
             // 
@@ -269,29 +292,31 @@ namespace PBL3.GUI.FrmCon
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(6, 37);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 20);
+            this.label8.Size = new System.Drawing.Size(105, 22);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Sản phẩm";
+            this.label8.Text = "Sản phẩm:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(313, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.Size = new System.Drawing.Size(95, 22);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Số lượng";
+            this.label9.Text = "Số lượng:";
             // 
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = global::PBL3.Properties.Resources.Save_icon;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(467, 574);
+            this.btnLuu.Location = new System.Drawing.Point(359, 576);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(196, 44);
             this.btnLuu.TabIndex = 3;
@@ -304,7 +329,7 @@ namespace PBL3.GUI.FrmCon
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(221, 574);
+            this.btnAdd.Location = new System.Drawing.Point(94, 576);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(210, 44);
             this.btnAdd.TabIndex = 3;
@@ -312,12 +337,26 @@ namespace PBL3.GUI.FrmCon
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuy.Location = new System.Drawing.Point(610, 576);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(196, 44);
+            this.btnHuy.TabIndex = 3;
+            this.btnHuy.Text = "Huỷ phiếu nhập";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // FrmNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(884, 625);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox2);
@@ -362,5 +401,7 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbbSanPham;
+        private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.Button btnHuy;
     }
 }
