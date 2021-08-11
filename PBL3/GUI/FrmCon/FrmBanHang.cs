@@ -16,6 +16,7 @@ namespace PBL3.GUI.FrmCon
         public delegate void SendMessage(string ID_taiKhoan);
         private static string IDTaiKhoan = "";
         public SendMessage Sender;
+        private static bool chk = false;
         private void GetMessage(string ID_taiKhoanInput)
         {
             IDTaiKhoan = ID_taiKhoanInput;
@@ -35,24 +36,11 @@ namespace PBL3.GUI.FrmCon
                 txtTenTK.Text = Function.Instance.getnameOfUser(IDTaiKhoan.Trim());
                 dateTimePicker1.Value = DateTime.Now;
                 txtTime.Text = dateTimePicker1.Value.ToString("MM/dd/yyyy  HH:mm:ss");
+                chk = false;
             }
             else
             {
-                if (lvsanpham.Items.Count == 0)
-                {
-                    MessageBox.Show("Hãy thêm sản phẩm vào danh sách");
-                    return;
-                }
-                decimal tongGia = Convert.ToDecimal(txtTong.Text);
-                string maKH = null;
-                if (txtMaKhach.Text.Length > 2) maKH = txtMaKhach.Text.Trim();
-                if (!Function.Instance.updateHoaDonBan(txtMaPN.Text, tongGia, maKH))
-                {
-                    MessageBox.Show("Lỗi");
-                    return;
-                }
-                MessageBox.Show("Lưu hoá đơn thành công");
-                clear();
+                MessageBox.Show("Bạn chưa lưu hoá đơn");
             }
         }
         private void setcbb()
@@ -140,6 +128,7 @@ namespace PBL3.GUI.FrmCon
             txtTong.Text = Math.Round(tong, 2) + "";
             cbbSanPham.SelectedIndex = -1;
             txtSoLuong.Text = "";
+            chk = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -229,6 +218,7 @@ namespace PBL3.GUI.FrmCon
 
             MessageBox.Show("Tạo mới hoá đơn thành công");
             clear();
+            chk = false;
         }
 
         private void cbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
@@ -312,9 +302,19 @@ namespace PBL3.GUI.FrmCon
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            if (!Function.Instance.checkHoaDon(txtMaPN.Text))
+            {
+                clear();
+                return;
+            }
+            if (chk == false)
+            {
+                return;
+            }
             if (Function.Instance.HuyHD(txtMaPN.Text))
             {
                 MessageBox.Show("Huỷ thành công");
+                chk = false;
                 clear();
             }
             else

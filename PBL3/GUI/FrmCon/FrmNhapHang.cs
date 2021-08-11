@@ -16,6 +16,7 @@ namespace PBL3.GUI.FrmCon
         public delegate void SendMessage(string ID_taiKhoan);
         private static string IDTaiKhoan = "";
         public SendMessage Sender;
+        private static bool chk = false;
         private void GetMessage(string ID_taiKhoanInput)
         {
             IDTaiKhoan = ID_taiKhoanInput;
@@ -38,11 +39,18 @@ namespace PBL3.GUI.FrmCon
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtMaPN.Text.Length > 1)
+            {
+                MessageBox.Show("Bạn chưa lưu phiếu nhập");
+                return;
+            }
             txtMaPN.Text = Function.Instance.CreateKey("PN");
             txtMaTK.Text = IDTaiKhoan.Trim();
             txtTenTK.Text = Function.Instance.getnameOfUser(IDTaiKhoan.Trim());
             dateTimePicker1.Value = DateTime.Now;
-            txtTime.Text=dateTimePicker1.Value.ToString("MM/dd/yyyy  HH:mm:ss");
+            txtTime.Text = dateTimePicker1.Value.ToString("MM/dd/yyyy  HH:mm:ss");
+            chk = false;
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -53,6 +61,7 @@ namespace PBL3.GUI.FrmCon
                 return;
             }
             MessageBox.Show("Tạo mới phiếu nhập thành công");
+            chk = false;
             clear();
         }
 
@@ -107,7 +116,7 @@ namespace PBL3.GUI.FrmCon
                 MessageBox.Show("Lỗi");
                 return;
             }
-
+            chk = true;
             cbbSanPham.SelectedIndex = -1;
             txtSoLuong.Text = "";
         }
@@ -180,9 +189,19 @@ namespace PBL3.GUI.FrmCon
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            if (!Function.Instance.checkPhieuNhap(txtMaPN.Text))
+            {
+                clear();
+                return;
+            }
+            if (chk==false)
+            {
+                return;
+            }
             if (Function.Instance.HuyNhapHang(txtMaPN.Text))
             {
                 MessageBox.Show("Huỷ thành công");
+                chk = false;
                 clear();
             }
             else
@@ -198,6 +217,7 @@ namespace PBL3.GUI.FrmCon
             lvsanpham.Items.Clear();
             cbbSanPham.SelectedIndex = -1;
             txtSoLuong.Text = "";
+            txtTime.Text = "";
         }
     }
 }

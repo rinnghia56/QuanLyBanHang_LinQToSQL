@@ -464,17 +464,21 @@ namespace PBL3.BusinessLogic
             if (!checkPhieuNhap(mapn)) return null;
             return db.PhieuNhaps.FirstOrDefault(pn => pn.MaPhieuNhap == mapn);
         }
-        private CT_PhieuNhap getCTPN(string maphieu)
+        private List<CT_PhieuNhap> getListCTPN(string maphieu)
         {
-            CT_PhieuNhap ct = db.CT_PhieuNhap.FirstOrDefault(x => (x.MaPhieuNhap == maphieu));
-            return ct;
+            List<CT_PhieuNhap> ds= db.CT_PhieuNhap.Where(x => (x.MaPhieuNhap == maphieu)).ToList();
+            return ds;
         }
         public bool HuyNhapHang(String maPn)
         {
             try
             {
-                CT_PhieuNhap ct = getCTPN(maPn);
-                db.CT_PhieuNhap.Remove(ct);
+                //remove ctpn
+                foreach(CT_PhieuNhap ct in getListCTPN(maPn))
+                {
+                    db.CT_PhieuNhap.Remove(ct);
+                }
+                //remove pn
                 PhieuNhap pn = getPN(maPn);
                 db.PhieuNhaps.Remove(pn);
                 db.SaveChanges();
@@ -485,6 +489,7 @@ namespace PBL3.BusinessLogic
                 return false;
             }
         }
+
         public bool checkPhieuNhap(string maPN)
         {
             return db.PhieuNhaps.Any(pn => pn.MaPhieuNhap == maPN);
@@ -720,17 +725,19 @@ namespace PBL3.BusinessLogic
             if (!checkHoaDon(maHD)) return null;
             return db.HoaDons.FirstOrDefault(hd => hd.MaHD == maHD);
         }
-        private CT_HoaDon getCTHoaDon_Ma(string maphieu)
+        private List<CT_HoaDon> getListCTHoaDon(string maphieu)
         {
-            CT_HoaDon cthd = db.CT_HoaDon.FirstOrDefault(x => (x.MaHD == maphieu));
-            return cthd;
+            List<CT_HoaDon> ds = db.CT_HoaDon.Where(x => (x.MaHD == maphieu)).ToList();
+            return ds;
         }
         public bool HuyHD(String maHD)
         {
             try
             {
-                CT_HoaDon ct = getCTHoaDon_Ma(maHD);
-                db.CT_HoaDon.Remove(ct);
+                foreach(CT_HoaDon ct in getListCTHoaDon(maHD))
+                {
+                    db.CT_HoaDon.Remove(ct);
+                }
                 HoaDon hd = getHD(maHD);
                 db.HoaDons.Remove(hd);
                 db.SaveChanges();

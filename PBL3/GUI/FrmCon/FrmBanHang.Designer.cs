@@ -251,7 +251,7 @@ namespace PBL3.GUI.FrmCon
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(262, 121);
+            this.dateTimePicker1.Location = new System.Drawing.Point(248, 121);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(160, 26);
             this.dateTimePicker1.TabIndex = 4;
@@ -261,7 +261,7 @@ namespace PBL3.GUI.FrmCon
             this.txtMaTK.BackColor = System.Drawing.Color.Silver;
             this.txtMaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaTK.ForeColor = System.Drawing.Color.Black;
-            this.txtMaTK.Location = new System.Drawing.Point(162, 55);
+            this.txtMaTK.Location = new System.Drawing.Point(148, 55);
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.ReadOnly = true;
             this.txtMaTK.Size = new System.Drawing.Size(260, 26);
@@ -283,7 +283,7 @@ namespace PBL3.GUI.FrmCon
             this.txtTenTK.BackColor = System.Drawing.Color.Silver;
             this.txtTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTK.ForeColor = System.Drawing.Color.Black;
-            this.txtTenTK.Location = new System.Drawing.Point(162, 86);
+            this.txtTenTK.Location = new System.Drawing.Point(148, 86);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.ReadOnly = true;
             this.txtTenTK.Size = new System.Drawing.Size(260, 26);
@@ -320,7 +320,7 @@ namespace PBL3.GUI.FrmCon
             // 
             this.txtTime.BackColor = System.Drawing.Color.Silver;
             this.txtTime.ForeColor = System.Drawing.Color.White;
-            this.txtTime.Location = new System.Drawing.Point(161, 121);
+            this.txtTime.Location = new System.Drawing.Point(147, 121);
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(261, 26);
             this.txtTime.TabIndex = 7;
@@ -375,7 +375,7 @@ namespace PBL3.GUI.FrmCon
             this.txtMaPN.BackColor = System.Drawing.Color.Silver;
             this.txtMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaPN.ForeColor = System.Drawing.Color.White;
-            this.txtMaPN.Location = new System.Drawing.Point(162, 24);
+            this.txtMaPN.Location = new System.Drawing.Point(148, 24);
             this.txtMaPN.Name = "txtMaPN";
             this.txtMaPN.ReadOnly = true;
             this.txtMaPN.Size = new System.Drawing.Size(260, 26);
@@ -397,7 +397,7 @@ namespace PBL3.GUI.FrmCon
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(449, 27);
+            this.label7.Location = new System.Drawing.Point(454, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 20);
             this.label7.TabIndex = 0;
@@ -408,7 +408,7 @@ namespace PBL3.GUI.FrmCon
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(449, 56);
+            this.label6.Location = new System.Drawing.Point(454, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 0;
@@ -419,7 +419,7 @@ namespace PBL3.GUI.FrmCon
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(449, 85);
+            this.label5.Location = new System.Drawing.Point(454, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 0;
