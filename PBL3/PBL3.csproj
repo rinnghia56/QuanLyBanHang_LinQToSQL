@@ -250,6 +250,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Phần mềm quản lý bán hàng %281%29.png" />
     <None Include="Resources\search-icon %284%29.png" />
     <None Include="Resources\Close-2-icon.png" />
     <None Include="Resources\Button-Add-icon %281%291.png" />
